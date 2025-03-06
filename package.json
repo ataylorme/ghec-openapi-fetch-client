@@ -1,12 +1,15 @@
 {
-	"name": "@ataylorme/ghec-openapi-fetch-client",
+	"name": "ghec-openapi-fetch-client",
 	"description": "An openapi-fetch client for the GitHub Enterprise Cloud REST API generated from GitHub's REST API OpenAPI Description",
 	"type": "module",
 	"files": ["dist"],
 	"version": "1.0.0",
 	"license": "MIT",
 	"author": "Andrew Taylor",
-	"repository": "github:ataylorme/ghec-openapi-fetch-client",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/ataylorme/ghec-openapi-fetch-client.git"
+	},
 	"publishConfig": {
 		"access": "public"
 	},
