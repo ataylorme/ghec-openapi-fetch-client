@@ -4,6 +4,8 @@ import type { paths } from "./lib/ghec/api/types/v1.d.js";
 
 type getRepoResponseType =
 	paths["/repos/{owner}/{repo}"]["get"]["responses"]["200"]["content"]["application/json"];
+type getOrgReposResponseType =
+	paths["/orgs/{org}/repos"]["get"]["responses"]["200"]["content"]["application/json"];
 
 test("Can get the public octocat/Hello-World repository", async () => {
 	const owner = "octocat";
@@ -19,6 +21,9 @@ test("Can get the public octocat/Hello-World repository", async () => {
 	expect(errorResponse).toBeUndefined();
 	expect(helloWorldRepo).toBeDefined();
 	expect(helloWorldRepo?.full_name).toBe(`${owner}/${repo}`);
+	if (helloWorldRepo !== undefined) {
+		expect(helloWorldRepo satisfies getRepoResponseType);
+	}
 });
 
 test("Can get octokit repositories with pagination", async () => {
@@ -46,4 +51,7 @@ test("Can get octokit repositories with pagination", async () => {
 	expect(errorResponse).toBeUndefined();
 	expect(reposResponse).toBeDefined();
 	expect(reposResponse?.length).toBeGreaterThanOrEqual(11);
+	if (reposResponse !== undefined) {
+		expect(reposResponse satisfies getOrgReposResponseType);
+	}
 });
