@@ -24,6 +24,7 @@
 		"generate:types": "openapi-typescript ./src/lib/ghec/api/openapi-spec.yaml -o ./src/lib/ghec/api/types/v1.d.ts",
 		"prepare": "husky",
 		"check-exports": "attw --profile node16 --pack . --ignore-rules=cjs-resolves-to-esm",
+		"changeset": "changeset",
 		"changeset:version": "changeset version",
 		"changeset:publish": "changeset publish",
 		"local-release": "npm run changeset:version && npm run changeset:publish",
