@@ -1,0 +1,33 @@
+name: Test on Push
+
+on:
+  push:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test_on_push:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Test that the project builds
+        run: npm run build
+
+      - name: Check Exports
+        run: npm run check-exports
+
+      - name: Run Tests
+        run: npm run test

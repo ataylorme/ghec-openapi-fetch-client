@@ -1,0 +1,25 @@
+{
+	"compilerOptions": {
+		"strict": true,
+		"noUncheckedIndexedAccess": true,
+		"paths": {
+			"@/*": ["./src/*"]
+		},
+		"rootDir": "src",
+		"outDir": "dist",
+		"module": "nodenext",
+		"sourceMap": true,
+		"moduleResolution": "nodenext",
+		"declaration": true,
+		"esModuleInterop": true,
+		"skipLibCheck": true,
+		"target": "es2022",
+		"allowJs": true,
+		"resolveJsonModule": true,
+		"moduleDetection": "force",
+		"isolatedModules": true,
+		"verbatimModuleSyntax": true,
+		"noImplicitOverride": true
+	},
+	"include": ["src/**/*.ts"]
+}

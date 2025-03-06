@@ -128,3 +128,6 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+
+# GitHub Open API Spec
+/src/lib/ghec/api/openapi-spec.yaml
